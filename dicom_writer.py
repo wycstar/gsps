@@ -15,10 +15,11 @@ def add_circles(dicom, circles, save_file):
     file_meta.ImplementationClassUID = "1.2.276.0.7230010.3.0.3.4.1"
     file_meta.ImplementationVersionName = "GSPS_DEMO"
 
-    ds_out = FileDataset("sample_annotation", {}, file_meta=file_meta, preamble=b"\0" * 128)
+    ds_out = FileDataset("sample_annotation", {},
+                         file_meta=file_meta,
+                         preamble=b"\0" * 128)
     ds_out.PixelData = dicom.PixelData
     ds_out.save_as(save_file)
-
 
 
 def main():
@@ -28,10 +29,11 @@ def main():
 
     # test parameter
     cir_rad, cir_pos_x, cir_pos_y = 10, 100, 100
-    circles = [{'r' : cir_rad, 'x' : cir_pos_x, 'y' : cir_pos_y}]
+    circles = [{'r': cir_rad, 'x': cir_pos_x, 'y': cir_pos_y}]
     save_file = "./images/sample_annotation.dcm"
 
     add_circles(input_dicom, circles, save_file)
+
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,41 @@
+
+# Dicom-File-Format
+
+# Dicom-Meta-Information-Header
+# Used TransferSyntax: Little Endian Explicit
+(0002,0000) UL 202                                      #   4, 1 FileMetaInformationGroupLength
+(0002,0001) OB 00\01                                    #   2, 1 FileMetaInformationVersion
+(0002,0002) UI [1.2.840.10008.5.1.4.1.1.2]              #  26, 1 MediaStorageSOPClassUID
+(0002,0003) UI [1.3.12.2.1107.5.1.4.74356.30000019103123014360300037429] #  56, 1 MediaStorageSOPInstanceUID
+(0002,0010) UI [1.2.840.10008.1.2]                      #  18, 1 TransferSyntaxUID
+(0002,0012) UI [1.2.124.113532.3510.50]                 #  22, 1 ImplementationClassUID
+(0002,0013) SH [AGFAMAY2003]                            #  12, 1 ImplementationVersionName
+(0002,0016) AE [ARCH2]                                  #   6, 1 SourceApplicationEntityTitle
+
+# Dicom-Data-Set
+# Used TransferSyntax: Little Endian Implicit
+(0008,0005) CS [ISO_IR 100]                             #  10, 1 SpecificCharacterSet
+(0008,0012) DA [20201012]                               #   8, 1 InstanceCreationDate
+(0008,0013) TM [210715]                                 #   6, 1 InstanceCreationTime
+(0008,0016) UI [1.2.840.10008.5.1.4.1.1.11.1]           #  28, 1 SOPClassUID
+(0008,0018) UI [1.2.826.0.1.3680043.8.498.13441129589979229441722548237004434606] #  64, 1 SOPInstanceUID
+(0008,0020) DA [20191101]                               #   8, 1 StudyDate
+(0008,0030) TM [140959.977000]                          #  14, 1 StudyTime
+(0008,0050) SH [R02642683]                              #  10, 1 AccessionNumber
+(0008,0060) CS [PR]                                     #   2, 1 Modality
+(0008,0070) LO [SIEMENS]                                #   8, 1 Manufacturer
+(0008,1030) LO [129-CT 19]                              #  10, 1 StudyDescription
+(0008,1115) SQ (Sequence with explicit length #=1)      # 130, 1 ReferencedSeriesSequence
+  (fffe,e000) na (Item with explicit length #=1)          # 122, 1 Item
+    (0008,1140) SQ (Sequence with explicit length #=1)      # 114, 1 ReferencedImageSequence
+      (fffe,e000) na (Item with explicit length #=2)          # 106, 1 Item
+        (0008,0016) UI [1.2.840.10008.5.1.4.1.1.2]              #  26, 1 SOPClassUID
+        (0008,0018) UI [1.2.826.0.1.3680043.8.498.77985888663725125826355753028205018485] #  64, 1 SOPInstanceUID
+      (fffe,e00d) na (ItemDelimitationItem for re-encoding)   #   0, 0 ItemDelimitationItem
+    (fffe,e0dd) na (SequenceDelimitationItem for re-encod.) #   0, 0 SequenceDelimitationItem
+  (fffe,e00d) na (ItemDelimitationItem for re-encoding)   #   0, 0 ItemDelimitationItem
+(fffe,e0dd) na (SequenceDelimitationItem for re-encod.) #   0, 0 SequenceDelimitationItem
+(0010,0020) LO [5207772]                                #   8, 1 PatientID
+(0020,000d) UI [1.2.124.113532.55507.34297.41430.20191101.132931.59482152] #  58, 1 StudyInstanceUID
+(0020,000e) UI [1.3.12.2.1107.5.1.4.74356.30000019103123014360300037327] #  56, 1 SeriesInstanceUID
+(0020,0010) SH [R02642683]                              #  10, 1 StudyID
